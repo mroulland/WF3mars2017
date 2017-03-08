@@ -20,6 +20,9 @@ Style Reset
         font-size: 1.5rem; /* 1.5 rem = 15px */
     }
 
+    section{
+        margin-bottom: 4rem;
+    }
 
 /* 
 em/rem 
@@ -63,6 +66,67 @@ Style largeur site
     header, main, footer{
         max-width:85rem;
 
+
         /* Centrer une balise de type block réduite en largeur */ 
         margin: 2rem auto;
+    }
+    
+/*
+Mise en forme typographique
+*/
+    .presentation{
+
+        /* Modifier la famille de la font */
+        font-family: "Arial", sans-serif;
+
+        /* Modifier la taille de la font */
+        font-size: 1.7rem;
+
+        /* Modifier l'interlignage */
+        line-height: 2em;  /* Si on choisit rem, on se référence aux dimensions de base, alors que pour mettre un interligne proportionnel à la valeur de la police, on utilise em */
+
+        /* Modifier la graisse de la font */
+        font-weight: bold;
+
+        /* Ajouter une ombre portée à la font */
+        text-shadow: .1rem .1rem .5rem blue;
+
+        /* Modifier la casse de la font (majuscule) */
+        text-transform: uppercase;
+
+        /* Modifier le style de la font (italique) */
+        font-style: italic;
+
+        /* Modifier la décoration de la font */
+        text-decoration: underline;
+
+        /* Modifier la couleur de la font */
+        color : white;
+
+        padding: 2rem;
+        background-color: red;
+        margin: 4rem auto;
+    }
+
+/*
+Utilisation des couleurs 
+*/
+
+    #portfolio{
+        
+        background-color: #617dca; /* Réfence hexadecimale */
+        color: white; /* Nom intelligible */
+        text-align: center;
+        
+    }
+
+    #portfolio article{
+        /* Utiliser RGBA pour modifier l'opacité de la couleur */
+        background-color: rgba(255, 255, 255, 0.65); /* Plus lent pour le navigateur */
+        color:black;
+        padding: 2rem;
+        margin: 1rem;
+
+        /* Faire en sorte d'afficher les articles sur 3 colonnes */
+        display: inline-block;
     }
