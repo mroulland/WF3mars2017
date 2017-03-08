@@ -2,23 +2,11 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>EXO1 - 8 mars</title>
+        <title>EXO2 Intégrer un fichier CSS - 8 mars</title>
 
-        <!-- Ajouter du style dans la balise head -->
-        <style>
-            a{
-                color: red;
-            }
+        <!-- Intégrer notre feuille de style css -->
+        <link rel="stylesheet" href="css/style.css">
 
-            h2{
-                color:green;
-            }
-
-            ul{
-                list-style-type: none;
-
-            }
-        </style>
     </head>
 
     <body>
@@ -30,7 +18,7 @@
             
             <!-- Navigation principale -->
             <Nav>
-                <ul style=list-type:"none">
+                <ul>
                     <li><a href="#" >Accueil</a></li>
                     <li><a href="#" >A propos</a></li>
                     <li><a href="#" >Portfolio</a></li>
@@ -46,14 +34,14 @@
         <main>
 
             <!-- Créer une zone -->
-            <section>
-                <h2>A Propos de moi</h2>
+            <section class="redBackground">
+                <h2 id="bigTitle">A Propos de <b>Morgane</b></h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam sit asperiores odio, laudantium accusamus est ratione enim, aut veniam fugit magnam deleniti sed aperiam similique molestias vel, rem! Blanditiis, enim.</p>
             </section>
 
             <!-- Créer une zone -->
             <section>
-                <h2>Portfolio de Morgane</h2>
+                <h2 id="portfolioTitle">Portfolio de <b>Morgane</b></h2>
                 <p>Cliquez sur un des projets ci-dessous.</p>
 
                 <!-- Créer trois sous-sections -->
@@ -75,14 +63,14 @@
             </section>
             
             <section>
-                <h2>Contacter Morgane</h2>
+                <h2>Contacter <b>Morgane</b></h2>
                 <p>Vous pouvez envoyer un email en cliquant sur cette adresse : <a href="#">morgane.roulland@hotmail.fr</a></p>
             </section>
 
         </main>
 
         <!-- Fermeture de la page -->
-        <footer>
+        <footer class="redBackground">
             <p>Under MIT Licence </p> <!-- Mention pour indiquer un code open source -->
         </footer>
     </body>

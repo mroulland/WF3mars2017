@@ -1,0 +1,66 @@
+/*
+Sélecteur logique : une balise html 
+*/
+    /* Faire en sorte que tous les textes de la page soient centrés */
+    body{
+        text-align: center;
+    }
+
+    /* Sélectionner les balises h2 et les balises h3 */
+    h2, h3{
+        /* Changer la couleur de la font */
+        color: red;
+    }
+
+    /* Sélectionner les balaises a */
+    a{
+        /* Supprimer le soulignement */
+        text-decoration: none;
+    }
+
+/*
+Sélecteurs imbriqués
+*/
+    h2 b{
+        color: green;
+        /*Pour dire b dans h2, on met les deux à la suite avec juste un espace*/
+    }
+
+    .redBackground h2{
+        color: white;
+    }
+/*
+Sélecteurs par class
+*/
+    /* Sélectionner la class redBackground */
+    .redBackground{
+        background-color: red;
+    }
+
+/*
+Sélecteurs par id
+*/
+    /* Sélection l'id bigTitle */
+    #bigTitle{
+        /* Modifier la taille de la font */
+        font-size:3rem;
+    }
+
+/* Dans les priorités, le css le plus bas sera le dernier lu et celui qui sera appliqué. Par contre, l'id est plus important que la Class, elle même plus importante que le sélecteur logique, peut importe leur positionnement dans la feuille de style*/
+
+
+/* Sélecteur d'interaction (état)
+*/
+    /* Changer la couleur des balises a au survol */
+    a:hover{
+        color: red;
+    }
+
+
+    .redBackground:hover{
+        background-color: green;
+    }
+
+    #bigTitle:hover{
+        color:blue;
+    }
