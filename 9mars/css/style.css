@@ -73,6 +73,18 @@ Style Reset
         margin-bottom: 3rem;
     }
 
+
+/*
+Style largeur maximum
+*/
+    nav ul, #portfolio, #aboutMe p, #contacts, footer section{
+        /* Définir une largeur maximum */
+        max-width: 95rem;  /*950px est une sorte de convention de confort pour la lecture, il faut limiter les éléments à cette taille pour qu'ils ne s'étalent pas trop)
+        /* Centrer une balise de type block dans son parent */
+        margin: auto;
+    }
+
+
 /* 
 Style header
 */
@@ -191,7 +203,6 @@ Style About Me
         /* Modifier l'interlignage */
         line-height: 3rem;
 
-        padding:0rem 25rem;
     }
 
     #aboutMe a{
