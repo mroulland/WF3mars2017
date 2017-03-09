@@ -1,0 +1,72 @@
+/* 
+Style Reset 
+*/
+
+    /* Supprimer toutes les marges */
+
+    *{
+       margin: 0;
+       padding: 0; 
+    }
+
+    /* Faire en sorte que 1rem = 10px */
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+    }
+
+    /* Supprimer la décoration des balises a */
+    a{
+        text-decoration: none;
+    }
+
+    /* Faire en sorte que les images ne dépassent pas leur parent (car la balise de type block qui la contient a une taille qui dépend de celle de l'écran */
+    img{
+        max-width: 100%;
+    }
+
+
+/* 
+Style header
+*/
+    header{
+        /*Aligner le texte au centre */
+        text-align: center; 
+
+        /* Mettre la couleur du texte au fond */
+        color: white; 
+
+        /* Ajouter une couleur de fond */
+        background: #18BC9C; 
+    }
+
+    nav{
+        /* Mettre le texte en majuscule */
+        text-transform: uppercase;
+
+        /* Aligner le texte à gauche */
+        text-align: left;
+
+        /* Ajouter une couleur de fond */
+        background-color: #2C3E50;
+      }
+    
+    nav a{
+        /* Modifier la couleur du texte */
+        color: white; 
+
+        /* Passer le texte en gras */
+        font-weight: bold;
+    }
+
+    li{
+        /* On peut utiliser directement li sans chemin précis car il n'y a qu'un seul endroit où il y a des li */
+        display: inline-block;
+        
+        /*  */
+        margin:
+    }

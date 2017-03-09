@@ -5,11 +5,17 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>9 mars - Mon premier site</title>
         <!-- raccourci pour créer le doctype : html:5 + tab -->
+
+        <!-- Ajouter la feuille de style CSS -->
+        <link rel="stylesheet" href="css/style.css">
+
     </head>
     <body>
 
         <!-- Ouverture de la page -->
         <header>
+
+            <!-- La navigation principale de la page -->
             <nav>
                 <ul>
                     <li><a href="#">Start Bootstrap</a></li>
@@ -76,8 +82,31 @@
 
             <section> 
 
-                <h2>Contact Me</h2>
-                <!-- Placer un formulaire -->
+                <h2>Contact me</h2>
+
+                <!-- Création d'un formulaire -->
+                <form action="#">
+
+                    <!-- Ajouter un champ pour le nom -->
+                    <!-- Placeholder permet d'afficher un message dans le input -->
+                    <input type="text" placeholder="Name">    
+
+                    <!-- Ajouter un champ pour le email -->
+                    <input type="email" placeholder="Email Adress">
+                    
+                    <!-- Ajouter un champ pour le numéro de téléphone -->
+                    <input type="text" placeholder="Phone Number">
+
+                    <!-- Ajouter un champ pour le message -->
+                    <textarea placeholder="Message"></textarea>
+
+                    <!--
+                        Terminer le formulaire par un input de type submit pour pouvoir le valider
+                        L'attribut "value" permet de modifier le texte d'un input de type submit 
+                        (comme le place holder pour les autres inputs)
+                    -->
+                    <input type="submit" value="Send">
+                </form>               
 
             </section>
 
@@ -101,7 +130,7 @@
 
                 <article>
                     <h3>About freelancer</h3>
-                    <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com/" target "_blank">Start Bootstrap</a>. </p>
+                    <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com/" target "_blank">Start Bootstrap</a>.</p>
                 </article>
 
             </section>
