@@ -1,0 +1,102 @@
+/* Importer un fichier CSS */
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+
+header{
+    text-align:center;
+}
+
+nav{
+    text-align: right;
+    position: relative;
+}
+
+nav li{
+    display: inline-block;
+}
+
+/* Sélectionner le premier enfant */
+nav li:first-child{
+    position: absolute;
+    left: 0;
+}
+
+/* Sélectionner le dernier enfant */
+nav li:last-child{
+
+    font-size:3rem;
+
+}
+
+
+/* Sélectionner le deuxième enfant */
+nav li:nth-child(2){
+
+    background: red;
+
+}
+
+/* Sélectionner la première balise rencontrée */
+header p:first-of-type{
+
+    font-size: 4rem;
+}
+
+/* Sélectionner une balise par son attribut et sa valeur */
+
+header [alt="image de profil"]{
+
+    width: 1rem;
+}
+
+/* Extraire une balise de la sélection */
+textarea, input:not([type="submit"  ]){
+
+    display: block;
+    width: 100%;
+}
+
+/* Sélecteur d'élément adjacent */
+a + img{
+
+    width: 2rem;
+}
+
+/* Sélecteur d'enfant de premier niveau */
+main > a{
+
+    font-size: 3rem;
+}
+
+
+/* Ajouter un pseudo élément à la fin de la balise h1 */
+h1:after{
+
+    /* Ajouter du contenu dans le pseudo-élément */
+    content: "";
+    display: block;
+    height: .2rem;
+    width: 10rem;
+    margin: 1rem auto;
+    background: red;
+
+}
+
+
+/* Ajouter un pseudo élément au début de la balise h1 */
+h1:before{
+    content:"\f005";
+    color: red; 
+    position : absolute;
+    top: 1.8rem;
+    left: 47.5%;
+    background: white;
+    padding: .5rem;
+
+    /* Font Awesome Like */
+    font-family: FontAwesome;
+}
+
+h1{
+    position: relative;
+}
