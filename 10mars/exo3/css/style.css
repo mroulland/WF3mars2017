@@ -1,0 +1,334 @@
+/* Importer un fichier CSS */
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+/* 
+Style Reset 
+*/
+
+    /* Supprimer toutes les marges */
+
+    *{
+       margin: 0;
+       padding: 0; 
+    }
+
+    /* Faire en sorte que 1rem = 10px */
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        font-family: "Arial", sans-serif;
+    }
+
+    /* Supprimer la décoration des balises a */
+    a{
+        text-decoration: none;
+    }
+
+    /* Faire en sorte que les images ne dépassent pas leur parent (car la balise de type block qui la contient a une taille qui dépend de celle de l'écran */
+    img{
+        max-width: 100%;
+        display : inline-block;
+    }
+
+    section{
+        padding: 6rem 0;
+    }
+    
+    h1{
+
+        /* Mettre le texte en majuscule */
+        text-transform: uppercase;
+
+        /* Augmenter la taille de la police */
+        font-size: 6rem;
+
+        /* Il vaut mieux utiliser un padding qui décale l'élement vers le bas, plutôt qu'un margin qui pousse l'élement du dessus */
+        padding-top: 3rem;
+    }
+
+    h2{
+        /* Aligner le texte au centre */
+        text-align: center;
+        
+        /* Modifier la casse */
+        text-transform: uppercase;
+        
+        /* Ajouter une marge extérieure en bas de 30px */
+        margin-bottom: 3rem;
+
+        /* Augmenter la taille de la font */
+        font-size: 4rem;
+        
+    }
+
+    h3{
+        /* Changer la taille de la font */
+        font-size: 2.5rem;
+        
+        /* Modifier la casse */
+        text-transform: uppercase;
+        /* Ajouter une marge extérieure en bas de 30px */
+        margin-bottom: 3rem;
+    }
+
+
+/*
+Style largeur maximum
+*/
+    nav ul, #portfolio, #aboutMe p, #contacts, footer section{
+        /* Définir une largeur maximum */
+        max-width: 95rem;  /*950px est une sorte de convention de confort pour la lecture, il faut limiter les éléments à cette taille pour qu'ils ne s'étalent pas trop)
+        /* Centrer une balise de type block dans son parent */
+        margin: auto;
+    }
+
+
+/* 
+Style header
+*/
+    header{
+        /*Aligner le texte au centre */
+        text-align: center; 
+
+        /* Mettre la couleur du texte au fond */
+        color: white; 
+
+        /* Ajouter une couleur de fond */
+        background: #18BC9C;
+
+        /* Ajouter une marge intérieure en bas de 60px */
+        padding-bottom: 6rem; 
+    }
+
+    nav{
+        /* Mettre le texte en majuscule */
+        text-transform: uppercase;
+
+        /* Aligner le texte à gauche */
+        text-align: right;
+
+        /* Ajouter une couleur de fond */
+        background-color: #2C3E50;
+
+        /* Ajouter une marge intérieure de 20px */
+        padding: 2rem;
+
+        /* Ajouter une marge extérieur en bas de 30px */
+        margin-bottom: 6rem;
+      }
+
+
+    nav a{
+        /* Modifier la couleur du texte */
+        color: white; 
+
+        /* Passer le texte en gras */
+        font-weight: bold;
+    }
+
+    li{
+        /* On peut utiliser directement li sans chemin précis car il n'y a qu'un seul endroit où il y a des li */
+        display: inline-block;
+
+        /* Ajouter une marge extérieure à droite */
+        margin-right: 1rem;
+    }
+
+    nav ul{
+        /* Bloquer les enfants dans leur parent */
+        position: relative;
+    }
+
+    #firstNavLi{
+        /* Sortir la balise du flux pour la repositionner précisemment */
+        position: absolute;
+
+        /*Placer la balise à gauche */
+        left: 0;
+
+        /* Modifier la taille de la font */
+        font-size: 1.5em; /* On met en em car c'est 50% de la taille inscrite dans la nav */
+
+    }
+    header p{
+        /* Attention à ne pas faire d'id ou class pour rien quand il n'y a qu'un type de chemin possible pour un sélecteur */
+        /* Augmenter la font */
+        font-size: 2.2rem;
+
+    }
+
+/*
+Style Portfolio 
+*/
+
+    #portfolio{
+        /* Centrer dans la largeur tous les éléments inline */
+        text-align: center;
+    }
+
+    #portfolio article{
+        /* Ajouter une marge extérieure de 10px */
+        margin: 1rem;
+
+        /* Créer trois colonnes */
+        display: inline-block;
+
+        /* Adapter la taille */
+        width: 29%;
+        
+        /* Bloquer les enfants dans leur parent */
+        position : relative;
+
+        line-height: 0;
+    }
+    
+    #portfolio a{
+        font-size: 8rem;
+        background: rgba(24, 188, 156, 0.7);
+        color: white;
+
+        /* Sortir la balise du flux pour la positionner précisément */
+        position: absolute;
+
+        /* Placer la balise en haut à gauche (même si elles sont bien placées à l'origine, il faut toujours préciser une position */
+        top: 0;
+        left: 0;
+
+        /* Faire en sorte que la balise soit à 100% de la taille de son parent */
+        width: 100%;
+        height: 100%;
+
+        /* Réduire l'opacité de la balise */
+        opacity: 0;
+
+        /* Gérer les transitions entre les états de la balise */
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+
+    /* Modifier l'opacité de la balise en hover */
+    #portfolio a:hover{
+        opacity: 1;
+    }
+
+/*
+Style About Me 
+*/
+
+    #aboutMe{
+        /* Modifier la couleur des textes */
+        color: snow;
+
+        /* Ajouter une couleur de fond */
+        background: #18BC9C;
+
+        /* Centrer le texte (valable pour le bouton download car on a demander au p d'être justify plus bas */
+        text-align: center;
+    }
+
+    #aboutMe p{
+        /* Afficher le texte sur deux colonnes  */
+        -webkit-column-count: 2; /* Chrome, Safari, Opera */
+        -moz-column-count: 2; /* Firefox */
+        column-count: 2;
+
+        -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+        -moz-column-gap: 40px; /* Firefox */
+        column-gap: 40px;
+
+        /* Justifier le texte */
+        text-align: justify;
+
+        /* Ajouter une marge au paragraphe (on utilise une marge car c'est le paragraphe qui pousse le bouton et non l'inverse */
+        margin-bottom: 4rem;
+
+        /* Modifier la taille de la font */
+        font-size: 1.75rem;
+
+        /* Modifier l'interlignage */
+        line-height: 3rem;
+
+    }
+
+    #aboutMe a{
+        color:snow;
+        border: .3rem solid snow;
+        padding: 1rem 5rem;
+        font-weight: bold;
+
+        /* Créer un bord arrondi */
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        border-radius: 1rem;
+
+    }
+
+/*
+Style Contact me
+*/
+
+    input, textarea{
+        display: block;
+        width:90%;
+        margin: 1rem auto; /* Le fait de mettre deux valeurs permet d'indiquer des margins en hauteur et auto en largeur */
+        padding: 1rem;
+        font-size: 2rem;
+
+        /* Annuler le style du navigateur */
+        border : none;
+        /* Redéfinir la bordure */
+        border-bottom: .1rem solid gray;
+    }
+
+    textarea{
+        /* Définir une hauteur minimum pour la zone de message */
+        min-height: 20rem;
+
+    }
+
+    /* Sélectionner une balise grâce à son attribut et sa valeur */
+    [type="submit"]{
+        width: 8rem;
+        display: inline-block;
+        margin-left: 7rem;
+        background-color: #18bc9c;
+        color: white;
+        font-weight: bold;
+
+        border-radius: .5rem;
+        -webkit-border-radius: .5rem;
+        -moz-border-radius: .5rem;
+    }
+
+/*
+Style Footer 
+*/
+
+    footer{
+        color:white;
+        background: #2C3E50;
+        text-align: center;
+    }
+
+    footer article{
+        display:inline-block;
+        width:29%;
+
+        /* Gérer l'alignement vertical (valable uniquement sur les balises dont on a changé le display en inline block */
+        vertical-align: top;
+    }
+
+    /* Sélectionner une balise grâce à son attribut et sa valeur */
+    [href="http://google.com"]{
+        color:#18BC9C;
+    }
+    
+    aside{
+        padding: 1.5rem;
+        background: #233140;
+
+    }
