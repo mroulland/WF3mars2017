@@ -1,0 +1,11 @@
+section{
+    background: #f0b7a1; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, #f0b7a1 0%, #9e1253 20%, #12003d 67%, #682a56 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, #f0b7a1 0%,#9e1253 20%,#12003d 67%,#682a56 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, #f0b7a1 0%,#9e1253 20%,#12003d 67%,#682a56 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0b7a1', endColorstr='#682a56',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    position: fixed;
+    width: 100%;
+    height: 100%
+}
