@@ -1,0 +1,156 @@
+/* 
+Style Reset
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.5rem;
+}
+
+section{
+    border: .1rem solid red;
+    height: 15rem; /* Eviter d'utiliser la propriété height */
+    margin: 4rem;
+    padding: 2rem;
+
+    /* Créer un bord arrondis de 10px */
+    border-radius: 1rem;
+}
+
+article{
+    width: 5rem;
+    height: 5rem;
+    background: black;
+    color: white;
+}
+
+/*
+CSS3 translate()
+*/
+
+    section:first-child article{
+        -ms-transform: translate(2rem, 2rem);
+        -webkit-transform: translate(2rem, 2rem);
+        
+        /* La propriété transofrm en dernier (d'abord les constructeurs) */
+        transform: translate(2rem, 2rem);
+    }
+
+/* Transform est une propriété, translate et rotate sont les méthodes */
+
+/*
+CSS3 rotate()
+*/
+    section:nth-child(2) article{
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        
+        transform: rotate(45deg);
+    
+    }
+
+/*
+CSS3 skewX()
+*/
+    section:nth-child(3) article{
+        -ms-transform: skewX(45deg);
+        -webkit-transform: skewX(45deg);
+
+        transform: skewX(45deg);
+    }
+
+/*
+CSS3 skewY ()
+*/
+    section:nth-child(4) article{
+        -ms-transform: skewY(45deg);
+        -webkit-transform: skewY(45deg);
+        
+        transform: skewY(45deg);
+    }
+
+/*
+CSS3 scale()
+*/
+    section:nth-child(5) article{
+        -ms-transform: scale(3, 5);
+        -webkit-transform: scale(3, 5);
+        
+        transform: scale(3, 5);
+        /* Scale augmente la balise de 3 fois sa largeur et 5 fois sa hauteur (pour les valeurs entre parenthèses) */
+    }
+
+/*
+Transformation 3D
+*/
+
+/*
+CSS3 rotateX
+*/
+    section:nth-child(6) article{
+        -webkit-transform: rotateX(45deg);
+        transform: rotateX(45deg);
+    }
+
+/*
+CSS3 rotateY
+*/
+    section:nth-child(7) article{
+        -webkit-transform: rotateY(45deg);
+        transform: rotateY(45deg);
+    }
+
+/*
+CSS3 rotateZ
+*/
+    section:nth-child(8) article{
+        -webkit-transform: rotateZ(45deg);
+        transform: rotateZ(45deg);
+    }
+
+
+/*
+Créer un rond avec un carré
+*/
+    section:nth-child(9) article{
+
+        border-radius: 50%;
+    }
+
+/*
+Utilisation de translate() pour caler des balises
+*/
+
+    section:nth-child(10) article{
+        font-size: 1rem;
+        border: .1rem solid red;
+        display: inline-block;
+        margin: .5rem;
+        vertical-align: top;
+
+        /* Bloquer les enfants dans le parent */
+        position: relative;
+
+        text-align: center;
+        }
+
+    section:nth-child(10) article p{
+        border: .1rem solid white;
+        width:90%;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        -ms-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
