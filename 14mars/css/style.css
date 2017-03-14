@@ -1,6 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
 
 /*
+Animation
+*/
+
+    @-webkit-keyframes pictoHeaderAnim{
+        0% { transform: translateY(0); }
+        50% { transform: translateY(1rem); }
+        100% { transform: translateY(0); }
+    }
+
+    @keyframes pictoHeaderAnim{
+        0% { transform: translateY(0); }
+        50% { transform: translateY(1rem); }
+        100% { transform: translateY(0); }
+    }
+
+
+/*
 Style Reset
 */
 
@@ -16,9 +33,10 @@ Style Reset
     }
 
     body{
-        font-size: 1.5 rem; /* => 15px */
+        font-size: 1.5rem; /* => 15px */
         font-family: 'Roboto', sans-serif;
         font-weight: 400;
+        text-align: center;
     }
 
     a{
@@ -26,7 +44,7 @@ Style Reset
         color: #349aa6;
     }
     
-    h1 span{
+    span{
         text-transform: lowercase;
     }
 
@@ -44,12 +62,32 @@ Style Reset
         display: block;
     }
 
+    h2, h3{
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 2.2rem;
+    }
+
+    section{
+        padding: 4rem 2rem;
+    }
+
+    p{
+        padding: 4rem 0;
+    }
+
+    figure{
+        padding: 2rem 0;
+    }
+
+    img{
+        max-width: 100%;
+    }
 
 /*
 Style header
 */
     header{
-        text-align: center;
         color: white;
 
         /* Configurer l'image de fond */
@@ -94,8 +132,131 @@ Style header
 
         /* Créer un rond avec une balise carrée */
         border-radius: 50%;
+
+        /* Afficher l'animation */
+        -webkit-animation-name: pictoHeaderAnim;
+        animation-name: pictoHeaderAnim;
+        
+        /* Définir la durée */
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+
+        /* Définir le nombre de boucle*/
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
     }
 
     a img{
         margin-top: 1rem; 
     }
+
+    /*
+    Style main
+    */
+        /* CalltoAction*/
+        .callToAction{
+            color: white;
+            border: .1rem solid white;
+            display: inline-block;
+            padding: 1rem;
+            border-radius: .5rem;
+            margin-top: 2rem;
+        }
+
+        .callToAction.blue{
+            color: #349aa6;
+            border-color: #349aa6;
+        }
+
+        /* Programme / Réponse  */
+        section:nth-child(2), section:nth-child(4){
+            color: white;
+
+            /* Effet parallaxe CSS */
+            background-image: url(../img/img-foule.jpg);
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+
+        /* Solutions / Chiffres / Footer */
+        section:nth-child(3), section:nth-child(7), footer{
+            color: white;
+            background: #349aa6;
+        }
+
+
+        /* Inscrivez-vous */
+        [alt="logo Salon des Maires"]{
+            width: 10rem;
+            margin-bottom: 2rem;
+        }
+
+
+        /* Vidéo */
+        section:nth-child(6){
+            background-color: #349aa6;
+            /* Bloquer les enfants dans le parent */
+            position: relative;
+
+            /* Masquer les balises enfants qui dépassent */
+            overflow: hidden;
+        }
+
+        video{
+            /* Placer ma video en fond d'écran */
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+        }
+
+        section:nth-child(6) article{
+            color: white;
+            background: rgba(0, 0, 0, .7);
+            padding: 4rem 2rem;
+
+            /* Faire passer la balise sur la première couche */
+            position: relative;
+            z-index: 1;
+        }
+
+        section:nth-child(6) h3{
+            font-weight: 900;
+            font-size: 1.7rem;
+            margin-bottom: 2rem;
+        }
+        
+       section:nth-child(6) a{
+           color: white;
+       }
+
+
+       /* Chiffres*/
+
+        section:nth-child(7) figure{
+            display: inline-block;
+            vertical-align: top;
+            width: 49%;
+
+        }
+
+        /* Présentation */
+        article + img{
+            width: 18rem;
+            margin-bottom: 4rem;
+        }
+
+        /* La balise iframe permet d'afficher une map */
+        iframe{
+            border: none;
+            width: 100%;
+            /* Il faut nécessairement ajouter une hauteur minimum pour naviguer dans la map*/
+            min-height: 30rem;
+        }
+
+    /* Footer */
+        footer{
+            font-size: 1rem;
+            padding: 2rem;
+        }
