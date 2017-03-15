@@ -1,0 +1,103 @@
+/* Importer une feuille de style */
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+*{
+    /* Inclure dans les largeurs le padding et le border (ça ne marche pas pour le margin) */
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    text-align: center;
+}
+
+ul{
+    padding: 0;
+}
+li{
+    padding: 1rem;
+}
+
+/*
+Masquer la nav pour les mobiles
+*/
+
+nav{
+    display: none;
+}
+
+/* Gestion du menu burger en CSS */
+.fa-bars{
+
+    font-size: 2rem;
+
+    /*Changer l'aspect du curseur */
+    cursor: pointer;
+}
+
+/* Afficher la nav lorsque le curseur est au-dessus du menu burger */
+
+.fa-bars:hover + nav{
+    /* Le + permet de sélectionner la balise qui suit */
+    display: block;
+}
+
+article{
+    color: red;
+}
+
+
+/*
+Configurer les styles pour les écrans d'une taille minimale de 550px 
+*/
+
+@media screen and (min-width: 550px){
+
+    /* Recréer les sélecteurs pour les modifier */
+    article{
+        display: inline-block;
+        width: 49%;
+    }
+
+}
+
+@media screen and (min-width: 850px){
+
+    /* Masquer le menu burger */
+    .fa-bars{
+        display: none;
+    }
+
+    /* Réafficher la nav */
+    nav{
+        display: block;
+    }
+
+    /* Justifier à gauche le texte des articles */
+    article{
+        text-align: left;
+        vertical-align: top;
+    }
+
+    /* Ajuster le style de la nav */
+    nav li{
+        display: inline-block;
+        padding: 0 .5rem;
+    }
+
+    /* Bloquer la taille du main */
+    main{
+        max-width: 950px;
+        margin: auto;
+        /* De cette façon, pas besoin de refaire une requête média au delà de 950px */
+    }
+
+    header{
+        width: 950px;
+        margin: auto;
+        background: red;
+
+        padding: 20px;
+        border: 10px solid blue;
+    }
+}
