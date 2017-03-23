@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+
+/*
+Style reset 
+*/
+  
+    *{
+        /* Supprimer les marges et padding */
+        margin: 0;
+        padding: 0;
+
+        /* Inclure les bords et padding dans la largeur */
+        box-sizing: border-box;
+    }
+
+    html{
+        /* Définir la taille 10px = 1rem */
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.2rem;
+        /* PS : La police de la créa est vraiment petite */
+        font-family: Arial, sans-serif;
+        background-image: url("../img/background.png");
+    }
+
+    section:not(:last-of-type){
+        margin-bottom: 3rem;
+    }
+
+    ul, footer{
+        background: #C55394;
+        height: 5rem;
+        /* Utilisation du height pour permettre le surlignement les balises li */
+    }
+
+    h1, h2, h3, li:first-child{
+        font-family: 'Courgette', cursive;
+    }
+
+    h1{
+        color: #C55394;
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-align: center;
+
+        /* On utilise un padding pour pousser le main vers le bas sans décaler l'image */
+        padding-bottom: 2rem;
+    }
+
+    h2, h3{
+       
+        font-weight: 400;
+        color: #EB43A3
+    }
+
+    h2{
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+
+    h3{
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    p{
+        margin: 1rem 0;
+    }
+
+/* 
+Style header
+*/
+
+    /* Style nav */
+
+    nav{
+        margin-bottom: 6rem;
+    }
+
+    /* Style My Unicorn */
+    
+    li:not(:first-of-type){
+        /* Mobile First : on ne veut afficher que "My Unicorn" */
+        display: none;
+    }
+
+    li:first-child{
+        color: white;
+        font-size: 2.5rem;
+        padding: 1rem 0 1rem 2rem;
+
+        /* Enlever les puces 
+        (on aurait pu display les li tout de suite, mais on le fera de toute façon dans la requête média) */
+        list-style: none;
+    }
+
+    /* Style Arc-en-ciel*/
+
+    header{
+        position: relative;
+    }
+
+    header img{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        
+        -ms-transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+
+        z-index: -1;
+        /* La valeur 0 ne fonctionne pas ... */
+
+        max-height: 50%;
+    }
+
+/*
+Style main
+*/
+
+    main{
+        max-width: 80%;
+        min-width: 30rem;   
+        margin: 0 auto 3rem auto;
+
+        background-color: #FFF;
+        box-shadow: 0 0 2rem #333;
+        border-radius: 1.5rem;
+
+        padding: 4rem 2rem;
+    }
+
+    /* Style Nos Licornes */
+
+        figure{
+            position: relative;
+            margin-bottom: 1rem;
+
+            /* Remarque : dans la créa ils ont oublié d'enlever le line-height, mais c'est plus joli sans ! */
+            line-height: 0;
+        }
+
+
+        figcaption{
+            background: rgba(51, 51, 51, 0.9);
+            color: white;
+            
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+    /* Style Contacts */
+
+        /* GoogleMap*/
+        iframe{
+            width: 100%;
+            height: 25rem;
+            margin-bottom: 2rem;
+            border: none;
+        }
+
+        /* Newsletter */
+        [type="email"]{
+            width: 20rem;
+            display: block;
+            margin-bottom: 1rem;
+
+            padding: .5rem;
+        }
+
+        /* Bouton Envoyer */
+        [type="submit"]{
+            background: #C55394;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            -webkit-border-radius: 0.4rem;
+            border-radius: 0.4rem;
+        }
+
+/* 
+Style footer 
+*/
+
+    footer{
+        color: white;
+        font-size: 1rem;
+        text-align: right;
+        padding: 1rem;
+    }
+
+
+/*
+Requêtes média
+*/
+
+    /* Pour les écrans d'une taille minimale de 400px */
+    @media screen and (min-width: 400px){
+
+        /* Style Nos licornes */
+        figure{
+            /* Mettre les images sur deux colonnes */
+            display: inline-block;
+            width: 49%;
+        }
+    }
+
+    @media screen and (min-width: 750px){
+        
+        /* Style nav */
+
+        nav{
+            text-align: right;
+            position: relative;
+        }
+
+        li:not(:first-of-type){
+            display: inline-block;
+            text-transform: uppercase;
+            height: 100%;
+            padding: 1.5rem;
+        }
+        
+        li:not(:first-of-type):hover{
+            background: #EB43A3;
+        }
+        
+        li:first-child{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Style titre principal */
+
+        h1{
+            font-size: 3rem;
+        }
+
+        /* Style main */
+
+        main{
+            max-width: 75rem;
+        }
+
+        /* Style Nos licornes */
+
+        figure{
+            /* Mettre les images sur une ligne */
+            display: inline-block;
+            width: 24%;
+        }
+
+        /* Style Contacts */
+
+        iframe, article{
+            display: inline-block;
+            margin: auto;
+            vertical-align: top;
+            margin: 1rem;
+            
+        }
+
+        iframe{
+            width: 60%;
+            height: 35rem;
+            border: none;
+        }
+
+        article{
+            width: 30%;
+        }
+    }
+
+    @media screen and (min-width: 850px){
+        main{
+            max-width: 85rem;
+        }
+
+    }
