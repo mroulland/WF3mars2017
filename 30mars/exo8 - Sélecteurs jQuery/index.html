@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Exo 8 : les sélecteurs jQuery</title>
+
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+        <header>
+            <h1>Exo 8 : les sélecteurs jQuery</h1>
+
+            <button class="myClass">Move</button>
+            <button class="myClass">Your Body</button>
+        </header>
+
+        <main>
+            <section>
+                <h2 id="myId">About</h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam iste et amet omnis atque quibusdam recusandae ipsa, magnam adipisci. Exercitationem officia, tempora ducimus dignissimos animi laborum, accusantium doloremque quis! Molestiae.</p>
+            </section>
+
+            <article>
+                <h2>Contacts <i>me</i></h2>
+                <h3>Catch me if you can</h3>
+                <p class="myClass">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores tempore, a alias pariatur voluptate dignissimos aliquam nihil adipisci maxime, voluptatum officia consequuntur quaerat placeat. Magni dolore, quibusdam dolor velit ducimus!</p>
+            </article>
+        </main>
+
+        <footer>
+            <ul>
+                <li>Accueil</li>
+                <li>A propos</li>
+                <li>Portfolio</li>
+                <li>Contacts</li>
+            </ul>
+        </footer>
+
+        <!--
+            TOUJOURS intégrer jquery AVANT le script du site
+        -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <!-- On prend la version 2x du CND jQuery pour sa stabilité, la version 3x n'étant pas encore optimisée pour tous les navigateurs. On prend la version "minified" pour plus de légèreté (correspond au même code sans retours chariot) -->
+        
+        <!-- Intégrer le JS à la fin du body -->
+        <script src="js/script.js"></script>
+    
+    </body>
+</html>

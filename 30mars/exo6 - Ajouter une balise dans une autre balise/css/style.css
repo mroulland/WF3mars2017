@@ -1,0 +1,15 @@
+nav{
+    padding: 2rem;
+}
+
+a{
+    text-decoration: none;
+    color: darkslateblue;
+    font-weight: bold;
+}
+
+li{
+    display: inline-block;
+    margin: 1rem;
+
+}
