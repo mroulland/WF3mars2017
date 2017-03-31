@@ -33,7 +33,8 @@ h1, h2, h3{
 a{
     text-decoration: none;
     color: white;
-    text-shadow: black 1px 1px 1px;
+    font-weight: 400;
+    text-shadow: black .1rem .1rem .1rem;
 }
 
 img{
@@ -44,6 +45,7 @@ img{
 /*
 Style header
 */
+
 
     header, footer{
         background-color:darkslateblue;
@@ -71,6 +73,7 @@ Style header
 
         -webkit-transform: translate(-50%, 50%);
         transform: translate(-50%, 50%);
+
     }
 
     h1 span{
@@ -81,14 +84,41 @@ Style header
     }
 
     nav ul{
-        display: none;
+        margin: 1rem;
+        height: 0;
+        overflow: hidden;
+
+        -webkit-transition: all 1s;
+        transition: all .5s;
+    }
+    
+    .toggleBurger{
+        height: 13rem;
     }
 
-    li{
-        display: inline-block;
+
+    nav li{
+        background: rgba(255, 255, 255, .5);
         padding: 1rem;
+        margin-bottom: .5rem;
     }
 
+    nav li:not(:last-child){
+        margin-right: .5rem;
+
+    }
+
+    .active{
+        background: white;
+        -webkit-transition: all 1s;
+        transition: all .5s;
+    }
+
+    .active a{
+        color: darkslateblue;
+        text-shadow: .05rem .1rem .05rem rgba(128, 128, 128, 0.7);
+        font-weight: 700;
+     }
 /*
 Style main
 */
@@ -111,6 +141,8 @@ Style main
         margin-bottom: 1rem;
     }
 
+
+
 /* 
 Style footer
 */
@@ -121,4 +153,40 @@ Style footer
         left: 0;
         width: 100%;
         margin-bottom: 0;
+    }
+
+
+/*
+Requêtes media 
+*/
+
+    @media screen and (min-width:850px){
+
+        /* Style header */
+
+        header{
+            text-align: left;
+        }
+
+        .fa-bars{
+            display: none;
+        }
+
+        nav ul{
+            height: auto;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        nav li{
+            display: inline-block;
+
+        }
+
+        main, h1, nav{
+            max-width: 85rem;
+            margin: auto;
+            position: relative;
+    }
     }

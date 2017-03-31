@@ -1,0 +1,13 @@
+*{
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+
+.active{
+    color: red;
+}
+
+.hidden{
+    opacity: 0;
+}
+
