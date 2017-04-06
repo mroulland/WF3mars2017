@@ -1,0 +1,381 @@
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two:400,700|Roboto:400,700,900');
+
+/*
+Reset
+*/
+    /* Enlever toutes les marges */
+    *{
+        margin: 0;
+        padding: 0;
+
+        /* Intégrer le padding et le border dans la taille des boites */
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    /* Configurer l'utilisation de 1rem = 10px */
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem; /* => 15px */
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    h1{
+        font-size: 3rem;
+        padding-bottom: 2rem;
+        font-family: 'Lobster Two', cursive;
+        font-weight: 700;
+    }
+
+    h2{
+        font-family: 'Lobster Two', cursive;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    h1 span{
+        display: block;
+        font-family: 'Roboto', sans-serif;
+        font-size: .5em; /* Pour dire au sous-titre qu'il fera toujours la moitié de la taille du h1 */
+        font-weight: 400;
+    }
+
+    
+    a, header li{
+        text-decoration: none;
+        /*-webkit-transition: all .5s;
+        transition: all .5s;*/
+    }
+
+    ul{
+        list-style: none;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+/*
+Style header 
+*/
+
+    header{
+        background-color: #22175b;
+        color: white;
+        padding: 2rem 2rem 4rem 2rem;
+        /* Bloquer les enfants dans le parent */
+        position: relative;
+
+    }
+    
+    nav{
+        display: none;
+    }
+
+    .aboutPage nav{
+        position: fixed;
+        z-index: 10000;
+        top: 0;
+        left: -100%;
+        height: 100%;
+        width: 20rem;
+        padding: 2rem;
+        background: #000;
+        display: block;
+    }
+
+
+    header > a{
+        /* La balise a qui est l'enfant direct du header 
+        On aurait aussi pu dire : h1 + a (première balise a qui suit le h1) 
+        header :nth-child(2) = le deuxième enfant du header */
+        background: white;
+        width: 4rem;
+        height: 4rem;
+        padding-top: 1rem;
+        border: 0.2rem solid #22175b;
+        display: inline-block;
+
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+       
+        -webkit-border-radius: 50%; /* Il faut absolument décrire une hauteur et largeur pour faire un carré afin d'appliquer un 50% */
+        border-radius: 50%;
+    }
+
+    header > a:hover{
+        color: white;
+        background: #22175b;
+        border-color: white;
+    }
+
+    header li{
+        font-weight: 700;
+        background: rgba(255, 255, 255, 0.5);
+        padding: 1rem;
+        margin-bottom: 1rem;
+
+    }
+
+    nav a{
+        color: white;
+    }
+
+    header li:hover{
+        background: white;
+    }
+
+    header li:hover a{
+        color: #22175b;
+    }
+
+/*
+Style main
+*/
+
+    main{
+        padding: 4rem 2rem 10rem 2rem;
+    }
+
+    /* Style About */
+
+    [src="img/profil.jpg"]{
+        width: 20rem;
+        margin-bottom: 2rem;
+
+        border: .3rem solid white;
+
+        -webkit-box-shadow: 0.2rem 0.2rem 0.7rem black;
+        -moz-box-shadow: 0.2rem 0.2rem 0.7rem black;
+        box-shadow: 0.2rem 0.2rem 0.7rem black;
+
+        -webkit-border-radius: 50%;
+        border-radius: 50%;    
+    }
+
+     [src="img/profil.jpg"] + p{
+         margin-bottom: 2rem;
+     }
+
+
+     /* Jauge de compétences */
+
+        h3 + ul{  /* La balise ul placée JUSTE APRES la balise h3 */
+            text-align: left;
+            margin: 2rem auto;
+        }
+
+        h3 + ul li{ /* Toutes les balises li placées après le h3 */
+            background: #665e90;
+            padding: .1rem;
+            margin-bottom: 1rem;
+            position: relative;
+        } 
+
+        h3 + ul p{
+            background: white;
+            padding: 1rem;
+            min-height: 3.5rem;
+
+            /* Pour l'animation */
+            width: 0;
+        }
+
+        h3 + ul span{
+            position: absolute;
+        }
+
+
+/*
+Style portfolio
+*/
+
+    figure{
+        position: relative;
+    }
+
+    figcaption{
+        position: absolute;
+        width: 20rem;
+        background: white;
+        padding: 1rem 2rem;
+        top: 50%;
+        left: 50%;
+
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+
+        -webkit-border-top-left-radius: 1rem;
+        border-top-left-radius: 1rem;
+    }
+
+    figcaption button{
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        border: 0;
+        padding: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+
+    #modal{
+        position: fixed;
+        z-index: 2000;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .7);
+        width: 100%;
+        height: 100%;
+
+         /*Pour l'animation */
+        display: none; 
+    }
+
+    #modal article{
+        text-align: left;
+        background: white;
+        width: 35rem;
+        margin: 5rem auto;
+        padding: 2rem; 
+    }
+/*
+Style Contacts
+*/
+    form{
+        margin: 2rem auto;
+    }
+
+    textarea, input:not([type="submit"]){
+        display: block;
+        width: 100%;
+
+        border: none;
+        border-bottom: .1rem dotted #22175b;
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    textarea{
+        min-height: 15rem;
+    }
+
+    form :last-child{
+        color: white;
+        background: #22175b;
+        border: none;
+        padding: .5rem 1rem;    
+    }
+
+    iframe{
+        width: 100%;
+        min-height: 20rem;
+    }
+
+/*
+Style footer
+*/
+
+footer{
+    color: white;
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #22175b;
+    padding: 2rem;
+
+}
+
+footer a{
+    color: white;
+}
+
+/* Toutes les balises li du footer sauf la dernière */
+footer li:not(:last-child){
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+
+/*
+Requêtes media 
+*/
+
+    /* Ecran d'une taille minimale de 400px */
+    @media screen and (min-width: 400px){
+
+        /* Style Portfolio */
+            .portfolioPage article{
+
+                /* Passer en deux colonnes */
+                display: inline-block;
+                width: 49%;
+
+                /* Gérer les padding autour des images */
+                padding: 0 1rem 0 0;
+            }
+
+            /* Séléctionner toutes les deux balises à partir de la deuxième */
+            /* La deuxième propriété padding sur les 2n +2 passe au dessus de la première et élimine le padding right juste au dessus */
+            .portfolioPage article:nth-child( 2n + 2 ){
+                padding: 0 0 0 1rem;
+            }
+    }
+
+    /* Ecran d'une taille minimale de 750 px */
+    @media screen and (min-width: 750px){
+
+        /* Style reset */
+            main, h1, nav{
+                max-width: 85rem;
+                /* Centrer la page dans la largeur */
+                margin: auto;
+            }
+
+            h1{
+                font-size: 4rem;
+                text-indent: 1rem;
+            }
+            h1 span{
+                display: initial;
+            }
+
+        /* Style header */
+
+            header{
+                text-align: left;
+                text-indent: 1rem;
+            }
+
+            /* Masquer le burger */
+            header > a{
+                display: none;
+            }
+
+            /* Afficher la nav */
+            nav{
+                display: block;
+            }
+
+            /* Aligner les items de la nav */
+            nav li{
+                display: inline-block;
+                text-indent: 0;
+            }
+
+        /* Style main */
+            main{
+                padding: 4rem 0 10rem 0;
+            }
+    }

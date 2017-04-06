@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Macondo');
+
+/*
+Reset
+*/
+
+    *{
+        margin: 0;
+        padding: 0;
+
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+    }
+
+    a{
+        text-decoration: none;
+        color: darkslategray;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+/*
+Style header
+*/
+
+    header, footer{
+        background: darkslategray;
+        width: 100%;
+
+    }
+
+    h1{
+        color: white;
+        font-family: 'Macondo';
+        font-weight: 400;
+        text-align: center;
+        font-size: 5rem;
+        text-shadow: 0.3rem 0.3rem 0.3rem black;
+        padding-bottom: 3rem;
+    }
+    nav ul{
+        background: white;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+
+    nav li{
+        display: inline-block;
+        padding: 1rem;
+        
+    }
+
+/*
+Style formulaire
+*/
+
+    form{
+        
+    }
+
+    input, texarea{
+        display: inline-block;
+        width: 70%;
+    }
