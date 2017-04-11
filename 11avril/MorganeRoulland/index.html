@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Evaluation HTML/CSS/JS</title>
+
+        <!-- On importe la feuille de style CSS -->
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+
+        <!-- Entête de la page -->
+        <header>
+            <nav>
+                <a href="index.html">OhMyCats !</a>
+            </nav>
+
+            <h1>Adoptez un chat trop bon ! </h1>
+
+        </header>
+
+        <!-- Contenu principal -->
+        <main>
+
+            <!-- Section formulaire  -->
+            <section>
+
+                <img src="img/chat_0.jpg" alt="Image choisir un chat">
+
+                <!-- Article contenant les éléments de formulaire -->
+                <article>
+
+                    <h2>Les chats à adopter</h2>
+                    
+                        <!-- Formulaire -->
+                        <form action="#">
+
+                            <label for="choixChat">Choix du chat :</label>
+                            <select name="chat" id="choixChat">
+                                <option value="null">-- Sélectionner --</option>
+                                <option value="Sushi">Sushi</option>
+                                <option value="Maki">Maki</option>
+                                <option value="Sashimi">Sashimi</option>
+                                <option value="Yakitori">Yakitori</option>
+                                <option value="Onigiri">Onigiri</option>
+                            </select>
+
+                            <label for="reasons">Raisons d'adoption :</label>
+                            <textarea id="reasons" placeholder="Saisissez ici les raisons pour lesquelles vous souhaitez adopter ce chat..."></textarea>
+                            
+                            <input type="submit" value="Envoyer">
+                            
+                        </form>
+                    
+                </article>
+
+            </section>
+
+            <!-- Section présentation -->
+            <section>
+
+                <article>
+                    
+                    <h2>Nos chats à adopter...</h2>
+
+                    <p>Sed quid est quod in hac causa maxime homines admirentur et reprehendant meum consilium, cum ego idem antea multa decreverim, que magis ad hominis dignitatem quam ad rei publicae necessitatem pertinerent? Supplicationem quindecim dierum decrevi sententia mea. Rei publicae satis erat tot dierum quot C. Mario ; dis immortalibus non erat exigua eadem gratulatio quae ex maximis bellis. Ergo ille cumulus dierum hominis est dignitati tributus.</p>
+
+                    <p>Haec igitur prima lex amicitiae sanciatur, ut ab amicis honesta petamus, amicorum causa honesta faciamus, ne exspectemus quidem, dum rogemur; studium semper adsit, cunctatio absit; consilium vero dare audeamus libere. Plurimum in amicitia amicorum bene suadentium valeat auctoritas, eaque et adhibeatur ad monendum non modo aperte sed etiam acriter, si res postulabit, et adhibitae pareatur.</p>
+
+                </article>
+
+                <article>
+                    <img src="img/tete-chat.png" alt="Tête de chat">
+                </article>
+
+            </section>
+
+        </main>
+
+        <footer>
+
+            <p>&copy; OhMyCats</p>
+
+        </footer>
+        
+        <!-- On intègre le CDN de jQuery à la fin du body -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+        <!-- On intègre le script JS après jQuery-->
+        <script src="js/script.js"></script>
+
+    </body>
+</html>

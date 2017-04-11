@@ -1,0 +1,91 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+/*
+Reset
+*/
+    *{
+        padding: 0;
+        margin: 0;
+
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    main{
+        padding: 2rem;
+    }
+
+/* Mettre le formulaire et l'image sur deux colonnes */
+    #myForm article{
+        text-align: left;
+        display: inline-block;
+        width: 48%;
+        vertical-align: top;
+        margin: 2rem auto;
+    }
+
+/* Design de la modal */
+
+    #modal{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .7);
+
+        /* Pour l'animation */
+        display: none;
+    }
+
+    #modal article{
+        background-color: white;
+        width: 30rem;
+        padding: 2rem;
+        margin: 5rem auto;
+        position: relative;
+    }
+
+    #modal article .fa-times{
+        position: absolute;
+        font-size: 1.5rem;
+        top: 1rem;
+        right: 1rem;
+    }
+
+/*
+Pour les écrans d'une taille minimale de 550px, mettre les sections sur deux colonnes
+*/
+
+    @media screen and (min-width: 550px){
+
+        main section{
+            display: inline-block;
+            width: 49%;
+            vertical-align: top;
+        }
+    }
+
+/* 
+Pour les écrans d'une taille minimale de 850px, mettre les sections sur trois colonnes 
+*/
+
+    @media screen and (min-width: 850px){
+        
+        main section{
+            width: 33%;
+        }
+    }

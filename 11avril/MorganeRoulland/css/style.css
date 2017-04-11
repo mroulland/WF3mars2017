@@ -1,0 +1,257 @@
+/* Import des polices */
+@import url('https://fonts.googleapis.com/css?family=Merienda|Roboto:400,700');
+
+/*
+Style reset
+*/
+
+    *{
+        /* On enlève toutes les marges intérieures et extérieures */
+        margin: 0;
+        padding: 0;
+        
+        /* On inclut les marges dans les dimensions */
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        /* On configure 10px = 1rem */
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        color: #5d5c5c;
+    }
+
+    h1, h2, h3, header a{
+        font-family: 'Merienda', cursive;
+        font-weight: 400;
+    }
+
+    h2, h3{
+        color: #2F4073;
+    }
+
+    section{
+        padding: 4rem 1.5rem;
+    }
+
+    img{
+        /* On demande aux images de ne jamais faire plus de 100% de la taille de leur parent */
+        max-width: 100%;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+
+/* 
+Style header 
+*/
+
+    nav, footer{
+        width: 100%;
+        background-color: #061339;
+        color: white;
+        padding: 1rem 2rem;
+    }
+
+    header a{
+        color: white;
+        list-style: none;
+        font-size: 2.2rem;
+    }
+
+    header{
+        background-image: url("../img/background.jpg");
+        background-repeat: repeat-x;
+        min-height: 27rem;
+    }
+
+    h1{
+        color: #FFF;
+        font-size: 3.5rem;
+        text-align: center;
+
+        /* Mettre une ombre derrière le titre */
+        text-shadow: .2rem .2rem .2rem black;
+
+        margin: 7rem 2rem 0 2rem;
+        line-height: 4rem;
+    }
+
+    
+
+/*
+Style main
+*/
+
+    /* Style Section Formulaire */
+
+        section:first-child{
+            background-color: #f1f1f1;
+        }
+
+        section:first-child h2{
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        form{
+            margin: 2rem auto;
+            background-color: #f5f5f5;
+            border: .1rem solid #bdbbbb;
+            -webkit-border-radius: .3rem;
+            border-radius: .3rem;
+            padding: 1rem;
+        }
+
+        textarea, select, input{
+            display: block;
+            width: 100%;
+            margin: 1rem 0;
+            -webkit-border-radius: .3rem;
+            border-radius: .3rem;
+            padding: 1rem;
+        }
+
+        textarea{
+            min-height: 20rem;
+            padding: 1rem;
+        }
+
+        label{
+            font-weight: 700;
+            margin: .5rem 0;
+        }
+
+        input{
+            border: none;
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        /* Créer une classe 'error' pour la validation du formulaire */
+        .error{
+            border: .2rem solid red;
+        }
+
+        /* Style du message de remerciements */
+        section:first-child p{
+            text-align: center;
+        }
+
+
+    /* Style Section Présentation */
+
+        section:nth-child(2){
+            background-color: #dddddd;
+        }
+
+        section:nth-child(2) h2{
+            font-size: 3rem;
+            margin: 2rem 0;
+        }
+
+        article p:first-of-type{
+            margin-bottom: 1.5rem;
+        }
+
+        /* Style de la tête de chat */
+        
+        section:nth-child(2) article:last-of-type{
+            text-align: center;
+        }
+
+        [alt="Tête de chat"]{
+            background-color: #7885A5;
+        }
+
+        section:nth-child(2):hover img{
+            background-color: #061339;
+        }
+    
+    /* Style footer */
+
+        footer p{
+            font-size: 1.2rem;
+            text-align: right;
+        }
+
+
+/* Requêtes médias */
+
+    @media screen and (min-width: 850px){
+
+        /* Première section */
+            section, header a{
+                padding: 2rem 10rem;
+            }
+
+            /* Cacher ce qui dépasse du float */
+            section{
+                overflow: hidden;
+            }
+
+            /* Placer l'image à droite du formulaire */
+            section:first-child img{
+                float: right;
+                vertical-align: top;
+                width: 60%;
+            }
+
+            section:first-child article{
+                width: 35%;
+            }
+
+            /* Demander une taille minimum pour le formulaire */
+            form{
+                min-width: 20rem;
+            }
+
+        /* Deuxième section */
+            section:nth-child(2) article{
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            section:nth-child(2) article:first-child{
+                width: 59%;
+            }
+
+            section:nth-child(2) article:last-child{
+                width: 40%;
+
+            }
+    }
+
+
+    @media screen and (min-width: 1100px){
+
+         section, header a{
+            padding: 2rem 20rem;
+        }
+
+         section:first-child img{
+            width: 70%;
+            max-height: 80rem;
+        }
+
+        section:first-child article{
+            width: 24%;  
+        }
+
+        section:nth-child(2) article:first-child{
+            width: 74%;
+        }
+
+        section:nth-child(2) article:last-child{
+            width: 25%;
+        }
+
+    }
