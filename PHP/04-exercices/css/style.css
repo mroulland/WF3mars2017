@@ -1,0 +1,12 @@
+form, article{
+    width: 400px;
+    margin: auto;
+    text-align: center;
+}
+
+input, select, label{
+    display: block;
+    width: 100%;
+    margin: 10px;
+
+}

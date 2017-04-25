@@ -657,13 +657,120 @@ echo '<h2> La boucle foreach pour parcourir les arrays </h2>';
 // -------------------------------------------------
 // La boucle foreach est un moyen simple de passer en revue un tableau. Elle fonctionne uniquement sur les arrays et les objets. Et elle a l'avantage d'être "automatique", s'arrêtant quand il n'y a plus d'éléments.
 
-echo '<pre>';print_r($tab);
+echo '<pre>';print_r($tab); 
 
 foreach($tab as $valeur){  // La variable $valeur (que l'on appelle comme on veut) récupère à chaque tour de boucle les valeurs qui sont parcourues dans l'array $tab. ["parcourt l'array $tab par ses valeurs"]
     echo $valeur . '<br>';
 }
 
-foreach($tab as $indice => $valeur) {
+foreach($tab as $indice => $valeur) { // On parcourt l'array $tab par ses indices auxquels on associe les valeurs. Quand il y a deux valeurs, la première parcourt la colonne des indices et la secondes la colonne des valeurs. Ces variables peuvent avoir n'importe quel nom. 
     echo $indice . 'correspond' . $valeur . '<br>';
 }
 
+
+
+//-------------------------------------------
+echo '<h2> Les arrays multidimensionnels </h2>';
+//-------------------------------------------
+// Nous parlons de tableaux multidimensionnels quand un tableau est contenu dans un autre tableau. Chaque tableau représente une dimension.
+
+// Création d'un tableau multidimensionnel :
+$tab_multi = array(
+        0 => array('prenom' => 'Julien', 'nom' => 'Dupon', 'telephone' => '06 00 00 00 00'),
+        1 => array('prenom' => 'Nicolas', 'nom' => 'Duran', 'telephone' => '06 00 00 00 00'),
+        2 => array('prenom' => 'Pierre', 'nom' => 'Duchemol')
+
+);
+
+echo '<pre>'; print_r($tab_multi); echo '</pre>';
+
+
+// Accéder à la valeur Julien :
+echo $tab_multi [0]['prenom'] . '<br>';    // affiche Julien : nous entrons d'abord  à l'indice 0 pour aller ensuite dans l'autre tableau à l'indice 'prenom'. Notez que 'prenom' est un string.
+
+// Parcourir le tableau multidimensionnel avec une boucle for :
+for ($i = 0; $i < count($tab_multi); $i++){
+    echo $tab_multi[$i]['prenom'] . '<br>';
+}
+
+// Exercice : afficher les prénoms avec une boucle foreach:
+
+
+foreach ($tab_multi as $i => $v ){ 
+    // Première version en passant par l'indice :
+    echo $tab_multi[$i]['prenom']. '<br>';
+
+    // Seconde version en passant par la valeur:
+    // print_r($v);
+    echo  $v ['prenom'] . '<br>'. $v['nom'] . '<br>'. $v['telephone'] . '<br>';
+}
+
+echo '<hr>';
+//-------------------------------------------
+echo '<h2> Les inclusions de fichiers </h2>';
+//-------------------------------------------
+
+echo 'Première inclusion ';
+include('exemple.inc.php'); // on inclut le fichier dont le chemin est spécifié
+
+echo '<br>Deuxième inclusion';
+include_once('exemple.inc.php');  // avec le once, on vérifie d'abord si le fichier n'est pas déjà inclus avant de faire l'inclusion (évite par exemple de redéclarer des fonctions en incluant deux fois le même fichier)
+
+
+echo '<br>Troisième inclusion';
+require ('exemple.inc.php');  // require fait la même chose que include mais génère une erreur de type fatale s'il ne parvient pas à inclure le fichier qui interrompt l'exécution du scipt. En revanche, include génère une erreur de type warning dans ce cas, ce qui n'interrompt pas la suite de l'exécution du script. 
+
+echo '<br>Quatrième inclusion';
+require_once('exemple.inc.php');  // Avec le once, on vérifie d'abord si  le fichier n'est pas déjà inclus avant de faire l'inclusion
+
+// Le ".inc" du nom du fichier inclus est là à titre indicatif pour préciser qu'il s'agit d'un fichier inclus et non pas d'un fichier directement utilisé. 
+
+
+
+echo '<hr>';
+
+//-------------------------------------------
+echo '<h2> Introduction aux objets </h2>';
+//-------------------------------------------
+// Un objet est un autre type de données. Un objet est issu d'une classe qui possède des attributs (encore appeleées propriétés) et des méthodes (équivalentes de fonctions). 
+// L'objet crée à partir d'une classe, peut accéder à ses attributs et ses méthodes. 
+
+// Exemple avec un personnage de type 'Etudiant' :
+class Etudiant {  // comme après function on écrivait le nom de la fonction, ici on écrit class et le nom de la class. Le nom prend toujours une majuscule. 
+    public $prenom = 'Julien';  // public pour préciser que l'élement est accessible partout et donc en dehors de la classe. 
+    public $age = 25;  // $age est un attribut ou propriété 
+    public function pays(){ // methode appelée pays
+        return 'France';
+    }
+
+} 
+
+$objet = new Etudiant(); // new permet de créer un nouvel objet. On instancie la class Etudiant en un objet appelé $objet. $objet est une instance de la classe Etudiant. 
+
+echo '<pre>'; print_r($objet); echo '</pre>'; // Ici, on regarde le contenu de $objet, on voit son type, et la classe dont il est issu. 
+
+// Afficher le prénom de l'étudiant $objet : 
+echo $objet->prenom . '<br>'; // nous pouvons accéder à une propriété d'un objet en mettant une flèche "->". Affiche "Julien"
+
+// Afficher le pays via la méthode pays() : 
+echo $objet->pays() . '<br>'; // on appelle la méthode pays() avec ses parenthèses : elle nous retourne 'France'
+
+// Contexte : ssur un site, une classe Panier contiendra les propriétés et les méthodes nécessaires au fonctionnement du panier d'achat : 
+
+class Panier {
+    public function ajout_article($article) {
+        // instructions qui ajoutent le produit au panier
+        return "L\'article $article a bien été ajouté au panier <br>";
+
+    }
+    
+}
+
+// Lorsqu'on clique sur le bouton "ajout au panier" : 
+$panier = new Panier();   // On crée un panier vide dans un premier temps
+echo $panier->ajout_article('Pull');   // puis on ajoute un Pull au panier en appelant la méthode ajout_article()
+
+
+// QUAND C'EST UN ARRAY C'EST DES CROCHETS, QUAND C'EST UN OBJET C'EST DES FLECHES
+
+// ************************************************
