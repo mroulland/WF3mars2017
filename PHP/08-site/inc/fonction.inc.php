@@ -48,7 +48,25 @@ function executeRequete($req, $param = array()) { // $param est un array vide pa
     }
     
     return $r; // retourne un objet PDOStatement qui contient le résultat de la requête. 
-} //
+} 
 
 
+
+// ********************************* Fonctions du panier ********************************* // 
+
+function creationDuPanier() {
+    if(!isset($_SESSION['panier'])){
+        // si il n'existe pas déjà un panier dans $_SESSION, on le crée : 
+        $_SESSION['panier'] = array();  // le panier est un array vide. 
+        $_SESSION['panier']['titre'] = array();
+        $_SESSION['panier']['id_produit'] = array();
+        $_SESSION['panier']['quantite'] = array();
+        $_SESSION['panier']['prix'] = array();
+    }
+}
+
+function ajouterProduitDansPanier($titre, $id_produit, $quantite, $prix) { // les arguments sont en provenance de panier.php 
+
+
+}
 ?>
