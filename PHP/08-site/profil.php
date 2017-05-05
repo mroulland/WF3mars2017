@@ -26,6 +26,34 @@ $contenu .= '<div><h3>Voici vos informations de profil :</h3>';
 $contenu .= '</div>';
 
 
+ /*
+    Exercice:
+        1.Afficher le suivi des commandes du membre (s'il y en a) dans une liste <ul><li> : id_commande, date et état de la commande S'il n'y en a pas, vous affichez "aucune commande en cours".
+        2.
+    */
+
+
+// Requête : 
+$id_membre = $_SESSION['membre']['id_membre']; 
+
+$resultat = executeRequete("SELECT id_commande, date_enregistrement, etat FROM commande WHERE id_membre = '$id_membre'"); // Dans une requête SQL, on met les variables entre quotes. Pour mémoire, si on y met un array, celui-ci perd ses quotes autour de l'indice. A savoir : on ne peut pas le faire avec un array multi-dimensionnel. 
+
+// S'il y a des commandes dans $resultat, on les affiche : 
+
+if($resultat->rowCount() > 0 ){
+    $contenu .= '<h3>Liste de vos commandes</h3>'; 
+    $contenu .= '<ul>';
+
+    while($liste_commande = $resultat->fetch(PDO::FETCH_ASSOC)){
+
+        $contenu .= '<li> Votre commande n° '. $liste_commande['id_commande'] .' du '. $liste_commande['date_enregistrement'] .' est actuellement '. $liste_commande['etat'] .'</li>';
+    }
+
+    $contenu .= '</ul>';
+
+} else {
+    $contenu .= '<p>Aucune commande en cours.</p>';
+}
 
 
 
