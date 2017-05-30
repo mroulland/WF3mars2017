@@ -1,0 +1,9 @@
+AJAX
+Asynchronous 
+Javascript
+And
+Xml
+
+JSON
+JavaScript Object Notation
+On utilise du JSON aujourd'hui à la place du xml, plus léger. 

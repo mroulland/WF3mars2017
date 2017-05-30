@@ -5,9 +5,9 @@ QUELQUES DEFINITIONS :
 
 Une base de données : il s'agit d'un emplacement de données sauvegardées. La BDD inclut des tables qui sont composées de chanmps (colonnes) et qui contiennent des enregistrements (lignes).
 
-SGBD : Système de Gestion de Base de Donnée : c'est un logicien qui sert d'interface entre utilisateurs et BDD permettant : d'introduire des données, de les mettre à jour, d'y accéder.
+SGBD : Système de Gestion de Base de Donnée : c'est un logiciel qui sert d'interface entre utilisateurs et BDD permettant : d'introduire des données, de les mettre à jour, d'y accéder.
 
-SQL : Structured Query Langage : il s'agit d'une langage de requêtes qui permet d'interroger une base de données. 
+SQL : Structured Query Langage : il s'agit d'un langage de requêtes qui permet d'interroger une base de données. 
 
 *****************************************
 
@@ -33,7 +33,7 @@ On distingue deux principaux SGBD, à savoir :
 	   
 	***********************************
 	
-	Deux esemples d'utilisations des BDD et du SQL dans des sites dynamiques : 
+	Deux exemples d'utilisations des BDD et du SQL dans des sites dynamiques : 
 		=> Inscription / connexion d'un membre du site
 		=> Site e-commerce avec une page boutique et une page détaillée du produit.
 	

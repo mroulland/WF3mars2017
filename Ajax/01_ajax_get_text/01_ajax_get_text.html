@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <style>
+            div{ width: 50%; margin: 0 auto; }
+            #demo { border: 1px solid; padding: 30px; }
+            div h1 { color: white; padding: 20px; background-color: darkred; }
+        </style>
+    </head>
+
+    <body>
+        <div id="titre">
+            <h1>ANCIEN TITRE</h1>
+            <button type="button" id="action2">Changer Titre</button>
+        </div>
+        <div>
+            <p id="demo">...</p>
+            <button type="button" id="action">Changer Texte</button>
+        </div>
+
+        <script>
+        /* 
+        Les statuts de la requête XMLHttpRequest
+        0 => objet crée, demande non initialisée
+        1 => connexion du serveur établie
+        2 => demande reçue par le serveur
+        3 => traitement côté serveur
+        4 => demande terminée, la réponse est reçue (complète)
+        */
+
+        /* 
+        Les statuts HTTP
+        200 => OK
+        403 => Forbidden
+        404 => Page not found
+        ...
+        https://fr.wikipedia.org/wiki/Liste_des_codes_HTTP
+        */
+
+        // On va récupérer l'élément bouton avec id "action" et on va déclencher une fonction lors de l'évènement du click
+        document.getElementById("action").addEventListener("click", changeText); 
+        // Trois façons de déclencher un évènement JS : addEventListener est la nouvelle qu'il est recommandé d'utiliser. 
+
+        function changeText (){
+            var xhttp = new XMLHttpRequest(); // instanciation de l'objet XMLHttpRequest. 
+
+            // mise en place d'un évènement sur le changement d'état
+            xhttp.onreadystatechange = function() {
+                console.log(xhttp.readyState); // Quel est le statut actuel de la requête ? 
+                console.log(xhttp.status); 
+
+                if(xhttp.readyState == 4 && xhttp.status == 200){
+                // Lorsque le statut de la requete est à 4 et que le statut http vaut 200 (ca veut dire que tout est fini et que l'exécution de l'Ajax est terminée donc qu'on a bien reçu la réponse demandée)
+                    console.log(xhttp.responseText); 
+
+                    document.getElementById("demo").textContent = xhttp.responseText; 
+                }
+            }
+            xhttp.open("GET", "ajax_info_text.txt", true); // On prépare.
+            // 1er argument : la méthode (ici GET), 2e argument : la page cible, 3e argument (facultatif) : mode asynchone (true) ou synchrone (false) cette valeur est à true par défaut.
+            xhttp.send();  // On envoie la demande.
+        }
+
+
+        // changer le contenu avec prise en charge de l'html
+        document.getElementById("action2").addEventListener("click", changeTitre); 
+       
+
+        function changeTitre (){
+            var xhttp = new XMLHttpRequest(); // instanciation de l'objet XMLHttpRequest. 
+
+            // mise en place d'un évènement sur le changement d'état
+            xhttp.onreadystatechange = function() {
+
+                if(xhttp.readyState == 4 && xhttp.status == 200){
+
+                    console.log(xhttp.responseText); 
+                    document.getElementById("titre").innerHTML = xhttp.responseText; 
+                }
+            }
+            xhttp.open("GET", "ajax_info_html.txt", true); // On prépare.
+            xhttp.send();  // On envoie la demande.
+        }
+        </script>
+    </body>
+</html>

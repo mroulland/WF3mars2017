@@ -1,0 +1,20 @@
+<!--
+J1 :
+01-class-objet-instance-visibilit�
+02-getter-setter-constructeur-this
+03-manipulation-type-argument
+04-constante-static-self
+05-heritage
+
+J2:
+06-surcharge-abstraction-finalisation-interface-trait
+07-methodes-magiques
+08-classes-existantes
+09-namespaces
+10-autoload 
+11-PDO(d�ja fait en proc�dural)
+12-architecture-MVC (mini-framework)
+
+J3-J4 :
+13-mini-framework (site_oo)
+-->
