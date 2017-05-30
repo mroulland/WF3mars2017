@@ -33,3 +33,9 @@ $admin = new Admin;
 echo $admin -> inscription() . '<br>';
 echo $admin -> connexion() . '<br>';
 echo $admin -> accesBackOffice() . '<br>';
+
+/*
+Commentaires : 
+    Dans notre site, un Admin est avant tout un membre, avec quelques fonctionnalités supplémentaires (accès backoffice, suppression de membres, etc ...). 
+    Il est donc naturel que la classe Admin soit héritière (extends) de la classe Membre et qu'on ne ré-écrive pas tout le code. 
+*/
