@@ -1,0 +1,46 @@
+13-framework
+=> explication.txt
+contenu
+
+Arborescence :
+    app/ : La configuration de l'application (modifications)
+    src/ : Le code PHP et HTML spécifique à notre projet (ajout de code)
+    vendor/ : Code général (coeur) de l'application et les entités.
+    web/ : Répertoire web racine. Le point d'entrée de notre application (index.php, img/ photo/ js/ css/ font/) (assets)
+
+
+-------------------------------------------------------------
+Nature des différents fichiers:
+
+app/
+    Config/
+        parameters.php :
+        Contient toutes les informations de connexion à la BDD... et autres paramètres...
+    
+    Config.php: 
+    Contient l'inclusion des params de connexion à la BDD, et les retourne dans une méthode getParametersConnect() 
+
+vendor/
+    autoload.php :
+    Permet d'inclure les bons fichiers lors d'un 'new' (instanciation)
+    Attention : seuls les controller sont dans le dossier SRC, il faut donc préciser que si le namespace n'est pas 'Controller' alors les fichiers sont dans vendor. 
+    Autre subtilité; le controller général (Controller\Controller) est également dans vendor. 
+
+    Entity/
+        Produit.php, Membre.php, Commande.php 
+        Classes qui contiennent toutes les propriétés (private) de nos entités et getters et les setters. POPO (Plain Old PHP Object)
+
+web/
+    index.php :
+    Clé d'entrée de notre application. (SILEX : index.php / Symfony app.php)
+    
+
+vendor/
+    Manager/
+        PDOManager.php : 
+        Cette classe représente la connexion à la BDD. Elle contient et nous retourne notre objet PDO grâce auquel nous pourrons effectuer des requêtes. 
+        Cette classe est un Singleton (singlette en français). Cela signifie qu'il ne peut y avoir qu'un seul objet issu de cette classe. 
+    
+        EntityRepository.php : 
+        Un repository centralise tout ce qui touche à la BDD et la récupération des entités. Concretement, il ne doit pas y avoir de requêtes ailleurs que dans un repository. 
+        Si une entité a besoin de requêtes spécifiques (exemple : jointure) dans ce cas les requêtes seront codées directement dans le repository en question. 
