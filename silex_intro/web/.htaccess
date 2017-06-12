@@ -1,0 +1,8 @@
+# activation de la réécriture d'URL
+RewriteEngine on 
+
+# Si on appelle un fichier qui n'existe pas ... 
+RewriteCond %{REQUEST_FILENAME} !-f
+# ... alors on redirige vers index.php  [Entre crochet ce sont les conditions]
+RewriteRule ^ index_dev.php [QSA,L]   
+# En prod uniquement on fait une redirection vers index_dev pour avoir la barre de débug et non index.php

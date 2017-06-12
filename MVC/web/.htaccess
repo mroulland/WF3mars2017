@@ -1,0 +1,9 @@
+# activation de la réécriture d'URL
+RewriteEngine on 
+
+# Si on appelle un fichier qui n'existe pas ... 
+RewriteCond %{REQUEST_FILENAME} !-f
+# ... alors on redirige vers index.php  [Entre crochet ce sont les conditions]
+RewriteRule ^ index.php [QSA,L] 
+#On fait ça pour mettre en place un rooter, on ne s'occupe plus de faire la redirection
+# entre les fichiers. Le rooter fera le travail dans le fichier index. Le php ne traitera plus à partir des infos fournies dans l'url

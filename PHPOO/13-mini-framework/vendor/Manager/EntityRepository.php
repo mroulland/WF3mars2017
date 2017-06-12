@@ -19,9 +19,9 @@ class EntityRepository
         // get_called_class() : fonction globale de PHP qui me retourne le nom de la classe dans laquelle je suis. 
         // Exemple : Repository\ProduitRepository
 
-        // return strtolower(str_replace(array('Repository\\', 'Repository'), '', get_called_class()));
+        return strtolower(str_replace(array('Repository\\', 'Repository'), '', get_called_class()));
         
-        return 'produit';  
+        // return 'produit';  
 
     }
 
