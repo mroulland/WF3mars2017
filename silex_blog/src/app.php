@@ -11,6 +11,7 @@ use Silex\Provider\HttpFragmentServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
 use Silex\Provider\SessionServiceProvider;
 use Silex\Provider\TwigServiceProvider;
+use Silex\Provider\ValidatorServiceProvider;
 
 /* Service providers */
 
@@ -47,8 +48,10 @@ $app->register(
 );
 
 $app->register(new SessionServiceProvider());
+$app->register(new ValidatorServiceProvider);
 
-/* Services qui sont des Repository */
+
+/* Services qui sont des Repositories */
 $app['category.repository'] = function () use ($app) {
     return new CategoryRepository($app['db']);
 };
