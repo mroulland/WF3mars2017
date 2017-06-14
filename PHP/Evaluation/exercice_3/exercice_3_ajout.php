@@ -1,4 +1,5 @@
 <?php
+echo '$txt tout le monde<br>';
 
 // DECLARATION DES DIFFERENTES VARIABLES DE CONTENUS 
 $message = "";

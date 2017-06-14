@@ -48,7 +48,7 @@ SELECT id_abonne, COUNT(id_livre) AS nombre FROM emprunt GROUP BY id_abonne ORDE
 -- **************************
 
 -- Syntaxe "aide mémoire" de la requête imbriquée : 
--- SECLECT a FROM table_de_a WHERE b IN (SELECT b FROM table_de_b WHERE condition);
+-- SELECT a FROM table_de_a WHERE b IN (SELECT b FROM table_de_b WHERE condition);
 
 -- Afin de réaliser une requête imbriquée, il faut obligatoirement un champ en COMMUN entre les deux tables. 
 
