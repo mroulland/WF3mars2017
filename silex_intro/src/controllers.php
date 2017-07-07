@@ -1,6 +1,7 @@
 <?php
 
 use Controller\FirstController;
+use Controller\JeuController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -78,6 +79,21 @@ $app
 $app
     ->get('/user/{userId}', 'first.controller:userAction')
     ->bind('user')
+;
+
+// Déclaration du controler en service dans l'application
+$app['jeu.controller'] = function(){
+    return new JeuController();
+};
+
+$app
+    ->match('/jeu', 'jeu.controller:jeuAction')
+    ->bind('jeu')
+;
+
+$app
+    ->get('/reponse', 'first.controller:reponseAction')
+    ->bind('reponse')
 ;
 
 
